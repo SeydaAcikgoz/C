@@ -2,15 +2,12 @@
 #include<conio.h>
 #include<stdlib.h>
 
-
-
 typedef struct Yigin{
 	char harf;
 	struct Yigin*onceki;	
 	struct Yigin*sonraki;	
 
 }Yigin;
-
 
 typedef struct Yigin1{
 	char harf;
@@ -24,8 +21,6 @@ typedef struct Yigin2{
 	struct Yigin2*onceki;	
 	struct Yigin2*sonraki;	
 }Yigin2;
-
-
 
 Yigin*ilk=NULL;
 Yigin*son=NULL;
@@ -108,11 +103,7 @@ Yigin2Ekle(char karakter){
 	son2->sonraki=NULL;
 }
 
-
-
-
 char*format="%c\n";
-
 int main(){
 	
 	char karakter,aranan1,aranan2,aranan3;
@@ -120,27 +111,17 @@ int main(){
 	int secim,kontrol=0;
 	
 	FILE*dosya=fopen("yigin.txt","r");
-	
-	
-
 	//sayi 48-57
 	//harf 97-122
-	
-
 	while(fscanf(dosya,format,&karakter)!=EOF){
 		YiginEkle(karakter);
 
 		if(karakter>=97 && karakter<=122){		//gelen karakter harf ise
 		Yigin1Ekle(karakter);
-		
 		}
-		
 		else if(karakter>=48 && karakter<=57){	//gelen karakter sayi ise
 		Yigin2Ekle(karakter);
 		}
-		
-		
-		
 	}
 	printf("\nYigin:");
 	YiginListele();
@@ -150,7 +131,6 @@ int main(){
 	
 	printf("\n\nArdisik rakam dizisi:");
 	Yigin2Listele();
-	
 	
 	while(1){
 	
@@ -179,13 +159,7 @@ int main(){
 				}
 				if(kontrol==0){
 					printf("\nAranan karakter dizisi yoktur.");
-				}
-				
+				}	
 			}
-		
-	
-			
-			
 	return 0;
 }
-
