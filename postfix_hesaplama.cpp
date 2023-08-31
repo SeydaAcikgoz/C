@@ -8,7 +8,6 @@ typedef struct Yigin{
     int kapasite;
     int* dizi;
 }Yigin;
- 
 
 struct Yigin* YiginOlustur( int kapasite ){
     struct Yigin* yigin = (struct Yigin*) malloc(sizeof(struct Yigin));
@@ -41,8 +40,6 @@ int cikar(struct Yigin* yigin){
 void ekle(struct Yigin* yigin,int sonuc){
     yigin->dizi[++yigin->karakter] = sonuc;
 }
- 
-
 
 int PostfixHesapla(char* postfix){
     struct Yigin* yigin = YiginOlustur(strlen(postfix));
@@ -54,10 +51,8 @@ int PostfixHesapla(char* postfix){
     for (int i = 0; postfix[i]; ++i){
         if(postfix[i]==' '){
         	continue;
-		}
-         
-        
-        else if (isdigit(postfix[i])){		//isdigit->sayi mi
+	}
+	else if (isdigit(postfix[i])){		//isdigit->sayi mi
             int sayi=0;
              
             while(isdigit(postfix[i])){
@@ -68,8 +63,6 @@ int PostfixHesapla(char* postfix){
              
             ekle(yigin,sayi);
         }
-         
-        
         else{
             int deger1 = cikar(yigin);
             int deger2 = cikar(yigin);
@@ -92,8 +85,7 @@ int PostfixHesapla(char* postfix){
 				break;
 	             
             }
-        }
-        
+        }  
     }
     return cikar(yigin);
 }
