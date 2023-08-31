@@ -99,7 +99,6 @@ node *sil(node *agac,int x){
 	}	
 		agac->sol=sil(agac->sol,x);
 		return agac;
-	
 }
 
 int main(){
@@ -130,7 +129,6 @@ int main(){
 	}
 	else{
 		printf("\nAranan eleman agacta yer almiyor.");
-	
 	}
 	printf("\n");
 	sil(agac,56);
@@ -143,6 +141,4 @@ int main(){
 	printf("\n");
 	sil(agac,28);
 	inorderdolas(agac);
-	
-	
 }
