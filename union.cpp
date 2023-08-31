@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
-// Union Tanýmlama  - 1
+// Union Tanimlama  - 1
 union ogrenci {
     char isim[20];
     int no;
     float ort;
 };
 
-// Union Tanýmlama - 2 
+// Union Tanimlama - 2 
 typedef union {
     char isim[20];
     int yas;
@@ -29,7 +29,7 @@ int main(){
     o.ort = 85.5;
     printf("Ortalama: %f \n", o.ort);
 
-    // Typedef ile Kullaným
+    // Typedef ile Kullanim
     ogretmen ogrt;
     strcpy(ogrt.isim, "Ismail");
 
