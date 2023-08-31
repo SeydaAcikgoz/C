@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-  
 
 typedef struct Yigin {
     int karakter;
@@ -14,7 +13,7 @@ struct Yigin* YiginOlustur(int kapasite){
   
     if (!yigin)
         return NULL;
-  
+	
     yigin->karakter = -1;
     yigin->kapasite = kapasite;
   
@@ -46,7 +45,7 @@ int kontrol(char ch){
 	if((ch >= 'a' && ch <= 'z')|| (ch >= 'A' && ch <= 'Z')){
 		return 1;
 	}
-   else{
+   	else{
 		return 0;
    }
 }
@@ -56,21 +55,16 @@ int oncelikbul(char ch){
     	if(ch=='+' || ch=='-'){
 		return 1;
 	}
-	
 	else if(ch=='*' || ch=='/'){
 		return 2;
-
 	}
 	else{
 		return -1;
-	
 	}
 }
-  
 
 int infixToPostfix(char* postfix){
     int i, k;
-  
    
     struct Yigin* yigin = YiginOlustur(strlen(postfix));
     if (!yigin) 
@@ -94,12 +88,11 @@ int infixToPostfix(char* postfix){
                
             if (!BosMu(yigin) && peek(yigin) != '('){
             	return -1; 
-			}
+		}
 			
             else{
             	cikar(yigin);
-
-			}
+		}
         }
   
         else{
@@ -113,7 +106,6 @@ int infixToPostfix(char* postfix){
   
     while (!BosMu(yigin)){
         postfix[++k] = cikar(yigin);
-
 	}
   
     postfix[++k] = '\0';
@@ -123,7 +115,6 @@ int infixToPostfix(char* postfix){
 int main()
 {
     char postfix[] = "((a/b)-c)+(d*e)-(a*c)";
-  
     infixToPostfix(postfix);
     return 0;
 }
